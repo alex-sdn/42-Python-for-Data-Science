@@ -1,5 +1,6 @@
 
 def get_mean(args):
+    """Takes a list of numbers as argument and returns the mean"""
     if args:
         return sum(args) / len(args)
     else:
@@ -7,6 +8,7 @@ def get_mean(args):
 
 
 def get_median(args):
+    """Takes a list of numbers as argument and returns the median"""
     if args:
         sorted_args = sorted(args)
         size = len(args)
@@ -21,6 +23,7 @@ def get_median(args):
 
 
 def get_quartile(args):
+    """Takes a list of numbers as arg and returns the quartiles in a list"""
     if args:
         sorted_args = sorted(args)
         size = len(args)
@@ -42,6 +45,7 @@ def get_quartile(args):
 
 
 def get_variance(args):
+    """Takes a list of numbers as argument and returns the variance"""
     if args:
         mean = get_mean(args)
         variance = sum((x - mean) ** 2 for x in args) / len(args)
@@ -52,6 +56,7 @@ def get_variance(args):
 
 
 def get_std(args):
+    """Takes a list of numbers as argument and returns the std deviation"""
     if args:
         variance = get_variance(args)
         std = variance ** 0.5
@@ -62,6 +67,15 @@ def get_std(args):
 
 
 def ft_statistics(*args: any, **kwargs: any) -> None:
+    """
+    Takes a list of nums as args and the requested calculations as kwargs
+    Prints the result or ERROR if no numbers
+    """
+    for arg in args:
+        if not isinstance(arg, (int, float)):
+            print('ERROR: Expected numbers in *args')
+            exit()
+
     for value in kwargs.values():
         res = None
         if value == 'mean':
@@ -74,7 +88,7 @@ def ft_statistics(*args: any, **kwargs: any) -> None:
             res = get_std(args)
         elif value == 'var':
             res = get_variance(args)
-        else: 
+        else:
             continue
 
         if res:
