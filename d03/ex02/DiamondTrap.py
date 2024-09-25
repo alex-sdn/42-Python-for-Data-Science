@@ -2,24 +2,24 @@ from S1E7 import Baratheon, Lannister
 
 
 class King(Baratheon, Lannister):
-    """King doc"""
+    """King class that inherits from Baratheon and Lannister"""
 
     def __init__(self, first_name, is_alive=True):
-        """King init doc"""
+        """Initializes a new King with the Baratheon __init__"""
         Baratheon.__init__(self, first_name, is_alive)
 
     def get_eyes(self):
-        """eyes getter"""
+        """Getter for eyes attribute"""
         return self.eyes
 
     def get_hairs(self):
-        """hairs getter"""
+        """Getter for hairs attribute"""
         return self.hairs
-    
+
     def set_eyes(self, eyes):
-        """eyes setter"""
+        """Setter for eyes attribute"""
         self.eyes = eyes
-    
+
     def set_hairs(self, hairs):
-        """hairs setter"""
+        """Setter for hairs attribute"""
         self.hairs = hairs
