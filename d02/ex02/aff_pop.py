@@ -12,36 +12,36 @@ def convert_values(value):
     return value
 
 
-def show_pop(path):
+def main():
     """Loads the .csv and displays the data for France and country2"""
-    data = load(path)
-    data.iloc[:, 1:] = data.iloc[:, 1:].map(convert_values)
+    try:
+        data = load("population_total.csv")
+        data.iloc[:, 1:] = data.iloc[:, 1:].map(convert_values)
 
-    years = data.columns[1:].astype(int)
+        years = data.columns[1:].astype(int)
 
-    france_data = data.loc[data['country'] == 'France']
-    pop_france = france_data.iloc[0, 1:]
+        france_data = data.loc[data['country'] == 'France']
+        pop_france = france_data.iloc[0, 1:]
 
-    country2 = 'Belgium'
-    country2_data = data.loc[data['country'] == country2]
-    pop_country2 = country2_data.iloc[0, 1:]
+        country2 = 'Belgium'
+        country2_data = data.loc[data['country'] == country2]
+        pop_country2 = country2_data.iloc[0, 1:]
 
-    plt.figure()
-    plt.plot(years, pop_france, label="France")
-    plt.plot(years, pop_country2, label=country2)
+        plt.figure()
+        plt.plot(years, pop_france, label="France")
+        plt.plot(years, pop_country2, label=country2)
 
-    plt.xlabel('Year')
-    plt.ylabel('Population')
-    plt.title('Population projections')
+        plt.xlabel('Year')
+        plt.ylabel('Population')
+        plt.title('Population projections')
 
-    plt.xlim([1800, 2050])
+        plt.xlim([1800, 2050])
 
-    plt.legend()
-    plt.show()
+        plt.legend()
+        plt.show()
+    except Exception as e:
+        print(str(e))
 
 
 if __name__ == '__main__':
-    try:
-        show_pop("population_total.csv")
-    except Exception as e:
-        print(str(e))
+    main()
