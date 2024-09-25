@@ -15,13 +15,16 @@ def check_string(string):
 
 def get_word_list(string, num):
     """
-    get_world_list(string, num) --> list
     Returns a list of words from the string with len > num.
     """
     return [word for word in string.split() if (lambda x: len(x) > num)(word)]
 
 
-if __name__ == "__main__":
+def main():
+    """
+    Takes a string and int passed as argument and prints out
+    the list of words longer than the int.
+    """
     try:
         assert len(sys.argv) == 3, "Two arguments required."
 
@@ -37,3 +40,7 @@ if __name__ == "__main__":
         print(f"AssertionError: {e}")
     except Exception as e:
         print(f"Error: {str(e)}")
+
+
+if __name__ == "__main__":
+    main()
