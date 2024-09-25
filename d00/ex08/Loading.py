@@ -1,4 +1,5 @@
 def ft_tqdm(lst: range) -> None:
+    """Displays a progress bar while iterating over the range"""
     size = len(lst)
 
     for i, item in enumerate(lst, 1):
