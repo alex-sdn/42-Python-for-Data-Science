@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 
 
 def show_life(path):
+    """Loads the .csv and displays the data for France"""
     data = load(path)
 
     france_data = data.loc[data['country'] == 'France']
