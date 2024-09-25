@@ -66,7 +66,8 @@ def to_morse(string):
     return morse
 
 
-if __name__ == "__main__":
+def main():
+    """Prints out the morse translation of a string passed as argument"""
     try:
         assert len(sys.argv) == 2, "One argument required."
 
@@ -78,3 +79,7 @@ if __name__ == "__main__":
         print(f"AssertionError: {e}")
     except Exception as e:
         print(f"Error: {str(e)}")
+
+
+if __name__ == "__main__":
+    main()
