@@ -3,7 +3,7 @@ import sys
 try:
     assert len(sys.argv) < 3, "more than one argument is provided"
 
-    if (len(sys.argv) == 1): exit() #no errors in exp output
+    if (len(sys.argv) == 1): exit()
 
     try:
         num = int(sys.argv[1])

@@ -10,7 +10,7 @@ def NULL_not_found(object: any) -> int:
         elif isinstance(object, str):
             print(f"Empty: {type(object)}")
         return 0
-    elif isinstance(object, float) and object != object: #NaN not equal to self
+    elif isinstance(object, float) and object != object:
         print(f"Cheese: {object} {type(object)}")
         return 0
     else:

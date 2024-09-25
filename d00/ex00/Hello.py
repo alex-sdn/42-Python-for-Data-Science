@@ -6,7 +6,7 @@ ft_dict = {"Hello" : "titi!"}
 
 ft_list[-1] = "World!"
 
-ft_tuple = ft_tuple[:-1] + ("France!",)  # remove last + add new
+ft_tuple = ft_tuple[:-1] + ("France!",)
 
 ft_set.remove("tutu!")
 ft_set.add("Paris!")
