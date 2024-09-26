@@ -1,5 +1,4 @@
 from load_image import ft_load
-import numpy as np
 import matplotlib.pyplot as plt
 
 
