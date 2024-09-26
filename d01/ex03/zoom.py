@@ -8,7 +8,7 @@ def main():
     print(pixels)
 
     if pixels is not None:
-        zoomed_pixels = pixels[150:550, 450:850]  # not b&w ?
+        zoomed_pixels = pixels[150:550, 450:850]
 
         print(f"New shape after slicing is {zoomed_pixels.shape}")
         print(zoomed_pixels)
