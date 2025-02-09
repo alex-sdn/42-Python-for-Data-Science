@@ -9,7 +9,7 @@ def slice_me(family: list, start: int, end: int) -> list:
         for lst in family:
             assert len(lst) == len(family[0]), 'Not a 2D array'
 
-        new = family[start:end]
+        new = family[slice(start, end)]
 
         print(f"My shape is : ({len(family)}, {len(family[0])})")
         print(f"My new shape is : ({len(new)}, {len(new[0])})")
