@@ -17,6 +17,7 @@ def rotate(pixels):
 def main():
     """Loads the img, resizes and rotates it before displaying"""
     pixels = ft_load("animal.jpeg")
+    pixels = pixels[:, :, 0]
     print(pixels)
 
     if pixels is not None:
@@ -26,7 +27,7 @@ def main():
         print(f"New shape after transpose is {rotated_pixels.shape}")
         print(rotated_pixels)
 
-        plt.imshow(rotated_pixels)
+        plt.imshow(rotated_pixels, cmap='gray')
         plt.show()
 
 
